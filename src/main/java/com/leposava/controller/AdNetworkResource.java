@@ -37,4 +37,16 @@ public class AdNetworkResource {
 
     }
 
+    @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response updateNetworks(List<AdNetwork> adNetworks){
+        List<AdNetwork> adNetworksUpdated = new LinkedList<>();
+        for(AdNetwork adNetwork : adNetworks){
+            adNetworksUpdated.add(AdNetworksDAO.getInstance().updateNetwork(adNetwork));
+        }
+        return Response.ok(adNetworksUpdated.toArray(new AdNetwork[adNetworksUpdated.size()])).build();
+
+    }
+
 }

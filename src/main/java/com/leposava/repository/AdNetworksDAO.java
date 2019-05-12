@@ -103,4 +103,14 @@ public class AdNetworksDAO {
         return  persist(adNetwork);
 
     }
+
+    public AdNetwork updateNetwork(AdNetwork adNetwork) {
+        AdNetwork updatedNetwork = find(AdNetwork.class, adNetwork.getId());
+        updatedNetwork.setName(adNetwork.getName());
+        updatedNetwork.setDescription(adNetwork.getDescription());
+        Detail  detail =  persist(adNetwork.getDetails());
+        updatedNetwork.setDetails(detail);
+        return  persist(adNetwork);
+
+    }
 }
