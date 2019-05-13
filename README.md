@@ -19,8 +19,10 @@ http://localhost:8080/ad-networks-rest/webapi/networks/network
 ```
 
 Sample adding list of networks
-on the url localhost:8080/ad-networks-rest/webapi/networks
-with POST verb....
+<br>
+localhost:8080/ad-networks-rest/webapi/networks
+<br>
+with verb POST 
 ```json
 [
     {
