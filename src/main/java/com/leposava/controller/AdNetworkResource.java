@@ -54,11 +54,20 @@ public class AdNetworkResource {
     @Path("/{networkID}")
     @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
     public Response getAdNetwork(@PathParam("networkID") String networkID) {
-         AdNetwork adNetwork = AdNetworksDAO.getInstance().getAdNetwork(networkID);
-        if(adNetwork == null){
-            return Response.status(Response.Status.NOT_FOUND).build();
+        try {
+            AdNetwork adNetwork = AdNetworksDAO.getInstance().getAdNetwork(networkID);
+            if(adNetwork == null){
+                return Response.status(Response.Status.NOT_FOUND).build();
+            }
+            return Response.ok(adNetwork).build();
+        }catch (Exception e){
+
+            e.printStackTrace();//tole ni prav z LOG je prav
+
         }
-        return Response.ok(adNetwork).build();
+
+
+        return Response.status(Response.Status.NOT_FOUND).build();
 
     }
 
@@ -87,6 +96,22 @@ public class AdNetworkResource {
         }
         adNetwork =  AdNetworksDAO.getInstance().updateNetwork(adNetwork);
         return Response.ok(adNetwork).build();
+
+    }
+
+    @DELETE
+    @Path("/{networkID}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response  deleteAdNetwork(@PathParam("networkID") String networkID){
+
+        AdNetwork networkToDelete = AdNetworksDAO.getInstance().find(AdNetwork.class, networkID);
+        if(networkToDelete == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        AdNetworksDAO.getInstance().remove(networkToDelete);
+
+        return Response.ok().build();
 
     }
 

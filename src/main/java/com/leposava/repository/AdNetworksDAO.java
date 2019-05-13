@@ -123,4 +123,15 @@ public class AdNetworksDAO {
 
         return tp.getSingleResult();
     }
+
+    public void remove(Object entity) {
+        try {
+            getEntityManager().getTransaction().begin();
+            getEntityManager().remove(getEntityManager().contains(entity) ? entity : getEntityManager().merge(entity));
+            getEntityManager().flush();
+            getEntityManager().getTransaction().commit();
+        }catch (NamingException e){
+            e.printStackTrace();
+        }
+    }
 }
