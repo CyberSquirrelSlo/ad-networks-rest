@@ -4,7 +4,8 @@
         <description>Main Persistence Unit</description>
 <!--        UNKOMMENT TNIS FOR H2 database-->
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
-        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
+<!--         <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source> -->
+         <jta-data-source>${env.DATASOURCE:java:jboss/datasources/ExampleDS}</jta-data-source>
         <class>com.leposava.model.AdNetwork</class>
         <class>com.leposava.model.Detail</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
