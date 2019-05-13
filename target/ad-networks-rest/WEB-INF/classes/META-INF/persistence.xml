@@ -3,18 +3,18 @@
     <persistence-unit name="ad" transaction-type="JTA">
         <description>Main Persistence Unit</description>
 <!--        UNKOMMENT TNIS FOR H2 database-->
-<!--        <provider>org.hibernate.ejb.HibernatePersistence</provider>-->
-<!--        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>-->
+        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <jta-data-source>java:jboss/datasources/ExampleDS</jta-data-source>
         <class>com.leposava.model.AdNetwork</class>
         <class>com.leposava.model.Detail</class>
         <exclude-unlisted-classes>true</exclude-unlisted-classes>
         <properties>
 
-            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>
-            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost\SQLEXPRESS:64129;DatabaseName=TEST"/>
-            <property name="javax.persistence.jdbc.user" value="sa"/>
-            <property name="javax.persistence.jdbc.password" value="sa"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"/>
+<!--            <property name="javax.persistence.jdbc.driver" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>-->
+<!--            <property name="javax.persistence.jdbc.url" value="jdbc:sqlserver://localhost\SQLEXPRESS:64129;DatabaseName=TEST"/>-->
+<!--            <property name="javax.persistence.jdbc.user" value="sa"/>-->
+<!--            <property name="javax.persistence.jdbc.password" value="sa"/>-->
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.SQLServer2012Dialect"/>-->
 
 
 <!--            <property name="connection.driver_class" value="org.h2.Driver"/>-->
@@ -25,13 +25,13 @@
 <!--            <property name="connection.password" value="sa"/>-->
 
             <!--        UNKOMMENT TNIS FOR H2 database-->
-<!--            <property name="hibernate.default_schema">PUBLIC</property>-->
+            <property name="hibernate.default_schema" value="PUBLIC"></property>
 
-<!--            &lt;!&ndash; JDBC connection pool (use the built-in) &ndash;&gt;-->
-<!--            <property name="connection.pool_size">1</property>-->
+            <!-- JDBC connection pool (use the built-in) -->
+            <property name="connection.pool_size" value="1"></property>
 
-<!--            &lt;!&ndash; SQL dialect &ndash;&gt;-->
-<!--            <property name="dialect">org.hibernate.dialect.H2Dialect</property>-->
+            <!-- SQL dialect -->
+            <property name="dialect" value="org.hibernate.dialect.H2Dialect"></property>
 
 <!--            &lt;!&ndash; Disable the second-level cache  &ndash;&gt;-->
 <!--            <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>-->
