@@ -6,7 +6,7 @@ to to configure database connection please edit persistence.xml
 Sample adding one ad netowrk
 <br>
 http://localhost:8080/ad-networks-rest/webapi/networks/network
-<br> wiht verb POST
+<br> wiht verb POST<br>
 
 ```json
  {
@@ -55,6 +55,8 @@ Sample adding list of networks
 localhost:8080/ad-networks-rest/webapi/networks
 <br>
 with verb POST 
+<br>
+
 ```json
 [
     {
@@ -98,6 +100,8 @@ For update localhost:8080/ad-networks-rest/webapi/networks with PUT
 First we do GET to get list to be updated (importatnt IDs must be in)
 <br>
 then we copy the returned json list and correct changes ...
+<br>
+
 ```json
 
 [
