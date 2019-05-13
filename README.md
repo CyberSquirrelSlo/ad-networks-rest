@@ -1,5 +1,6 @@
 # ad-networks-rest
-IT is a Jersey Rest application which is running on Wildfly server. I am using MSSQL database
+IT is a Jersey Rest application which is running on Wildfly server and  MSSQL database
+to to configure database connection please edit persistence.xml
 
 
 Sample adding one ad netowrk
