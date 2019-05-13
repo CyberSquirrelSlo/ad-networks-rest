@@ -18,6 +18,26 @@ http://localhost:8080/ad-networks-rest/webapi/networks/network
     }
 ```
 
+Sample updating a single network
+<br>
+http://localhost:8080/ad-networks-rest/webapi/networks/network
+<br>
+with verb PUT 
+
+```json
+{
+    "description": "CPA Affiliate Network with high payouts and the best deals.",
+    "details": {
+        "additionalInformation": "t is our mission to guarantee simple account management, daily support, best CPA offers and to always, always keep a step ahead of competitors when it comes to affiliate payments. It is our goal to make our partners comfortable, rich and happy.  ",
+        "id": "d709bc9f-b596-4c08-aed6-373ba58c3f8c",
+        "networkType": "Affiliate",
+        "paymentType": "CPA"
+    },
+    "id": "3daf13d3-c362-445f-9187-54d1ec23938b",
+    "name": "Rainmaker UPDATED"
+}
+```
+
 Sample adding list of networks
 <br>
 localhost:8080/ad-networks-rest/webapi/networks
