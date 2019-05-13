@@ -42,13 +42,14 @@ with verb PUT
 }
 ```
 <br>
-SIMPLE GET SINGLE NETWORK with verb GET and ID of the network
+ GET SINGLE NETWORK with verb GET and ID of the network
 <br>
 http://localhost:8080/ad-networks-rest/webapi/networks/012ced6f-87c6-4a73-a437-84d3a60ae594
 <br>
-SIMPLE DELETE SINGLE NETWORK with verb DELETE and ID of the network
+ DELETE SINGLE NETWORK with verb DELETE and ID of the network
 <br>
 http://localhost:8080/ad-networks-rest/webapi/networks/012ced6f-87c6-4a73-a437-84d3a60ae594
+<br>
 <br>
 Sample adding list of networks
 <br>
