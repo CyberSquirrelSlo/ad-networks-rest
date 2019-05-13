@@ -49,4 +49,45 @@ public class AdNetworkResource {
 
     }
 
+
+    @GET
+    @Path("/{networkID}")
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response getAdNetwork(@PathParam("networkID") String networkID) {
+         AdNetwork adNetwork = AdNetworksDAO.getInstance().getAdNetwork(networkID);
+        if(adNetwork == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        return Response.ok(adNetwork).build();
+
+    }
+
+    @POST
+    @Path("/network")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response postAdNetwork(AdNetwork adNetwork) {
+
+        if(adNetwork == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        adNetwork =  AdNetworksDAO.getInstance().saveNetwork(adNetwork);
+        return Response.ok(adNetwork).build();
+
+    }
+
+    @PUT
+    @Path("/network")
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces({MediaType.APPLICATION_XML, MediaType.APPLICATION_JSON})
+    public Response putAdNetwork(AdNetwork adNetwork) {
+
+        if(adNetwork == null){
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+        adNetwork =  AdNetworksDAO.getInstance().updateNetwork(adNetwork);
+        return Response.ok(adNetwork).build();
+
+    }
+
 }

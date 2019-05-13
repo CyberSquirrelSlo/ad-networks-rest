@@ -113,4 +113,14 @@ public class AdNetworksDAO {
         return  persist(adNetwork);
 
     }
+
+    public AdNetwork getAdNetwork(String networkID) {
+        CriteriaBuilder cb = entityManager.getCriteriaBuilder();
+        CriteriaQuery<AdNetwork> cq = cb.createQuery(AdNetwork.class);
+        Root<AdNetwork> actor = cq.from(AdNetwork.class);
+        cq.where(cb.equal(actor.<String>get("id"),networkID));
+        TypedQuery<AdNetwork> tp = entityManager.createQuery(cq);
+
+        return tp.getSingleResult();
+    }
 }
