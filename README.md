@@ -1,4 +1,7 @@
 # ad-networks-rest
+IT is a Jersey Rest application which is running on Wildfly server. I am using MSSQL database
+
+
 Sample adding one ad netowrk
 <br>
 http://localhost:8080/ad-networks-rest/webapi/networks/network
