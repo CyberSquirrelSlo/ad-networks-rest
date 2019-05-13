@@ -1,5 +1,22 @@
 # ad-networks-rest
+Sample adding one ad netowrk
+<br>
+http://localhost:8080/ad-networks-rest/webapi/networks/network
+<br> wiht verb POST
 
+```json
+ {
+        "description": "CPA Affiliate Network with high payouts and the best deals.",
+        "details": {
+            "additionalInformation": "t is our mission to guarantee simple account management, daily support, best CPA offers and to always, always keep a step ahead of competitors when it comes to affiliate payments. It is our goal to make our partners comfortable, rich and happy.  ",
+            "networkType": "Affiliate",
+            "our_targeting_options_type": "Geographic",
+            "paymentType": "CPA",
+            "we_are_a_type": "Exchange"
+        },
+        "name": "Rainmaker"
+    }
+```
 
 Sample adding list of networks
 on the url localhost:8080/ad-networks-rest/webapi/networks
